@@ -918,8 +918,8 @@ rspBART <- function(x_train,
       for(jj in 1:length(main_effects_train_list_norm)){
 
         if(jj <= NCOL(data$x_train)){
-            plot(x_train[,jj],colMeans(main_effects_train_list_norm[[jj]][1001:i,, drop = FALSE]),main = paste0('X',jj),
-                 ylab = paste0('G(X',jj,')'),pch=20, ylim = c(-0.1,0.1),xlab = paste0('x.',jj), col = alpha("black",1.0))
+            plot(x_train[,jj],colMeans(main_effects_train_list_norm[[jj]][501:i,, drop = FALSE]),main = paste0('X',jj),
+                 ylab = paste0('G(X',jj,')'),pch=20,ylim = c(-7,7),xlab = paste0('x.',jj), col = alpha("black",1.0))
         }
 
         # else if(jj == 5){
@@ -966,7 +966,7 @@ rspBART <- function(x_train,
 
   # Quick check over the RMSE
   if(plot_preview){
-    rmse(all_y_hat_test_norm[500:i,] %>% colMeans(na.rm = TRUE), y = sim_test$y)
+    rmse(all_y_hat_test_norm[1500:i,] %>% colMeans(na.rm = TRUE), y = sim_test$y)
     rmse(sim_test$y, aux$yhat.test.mean)
     rmse(sim_test$y, aux2$y_hat_test_mean)
   }

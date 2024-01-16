@@ -4,7 +4,7 @@ rm(list=ls())
 devtools::load_all()
 seed_ <- 42
 set.seed(42)
-n_ <- 250
+n_ <- 500
 sd_ <- 1
 # sim_train <- mlbench.friedman1.nointeraction(n = n_,sd = sd_)  |> as.data.frame()
 # sim_test <- mlbench.friedman1.nointeraction(n = n_,sd = sd_)  |> as.data.frame()
@@ -12,11 +12,11 @@ sd_ <- 1
 # sim_train <- mlbench.friedman1.nointeraction.noise(n = n_,sd = sd_)  |> as.data.frame()
 # sim_test <- mlbench.friedman1.nointeraction.noise(n = n_,sd = sd_)  |> as.data.frame()
 
-# sim_train <- mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
-# sim_test <- mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
+sim_train <- mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
+sim_test <- mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
 
-sim_train <- break.mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
-sim_test <- break.mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
+# sim_train <- break.mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
+# sim_test <- break.mlbench.friedman1(n = n_,sd = sd_)  |> as.data.frame()
 
 
 # sim_train <- mlbench.d1.break(n = n_,sd = 1)  |> as.data.frame()
